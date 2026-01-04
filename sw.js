@@ -26,10 +26,10 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-4a2c7f1f5a45159642c6.js"
+    "url": "webpack-runtime-272191caa617bdf29996.js"
   },
   {
-    "url": "styles.d456ff10ff2c69f4cddc.css"
+    "url": "styles.7e35a7e8aaf4f8052521.css"
   },
   {
     "url": "styles-f3e9059f8c2a75df70f2.js"
@@ -38,14 +38,14 @@ self.__precacheManifest = [
     "url": "framework-70a2455d4a4320e97528.js"
   },
   {
-    "url": "app-e8516ae5395792b4782f.js"
+    "url": "app-cea704e650d6a83f5406.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-90a262de4b23279c9d57.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "872c1a661718d01e3c3d6206fb6cfa3c"
+    "revision": "c262b0f9f3f97d6ef30be20f5c22405e"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -53,14 +53,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "9ad07997ede68c7a9fbd125dd88071f0"
+    "revision": "f9814c5af95bc870f9cdd42f8cdbfcfa"
   },
   {
     "url": "polyfill-f88fa77a70307660e63d.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "639221eebff4c02e12d6ecb6067e3f01"
+    "revision": "87594c0ab93543e843d22381e0ff685d"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -79,12 +79,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/centrumGitPages`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-e8516ae5395792b4782f.js`))) {
+  if (!resources || !(await caches.match(`/centrumGitPages/app-cea704e650d6a83f5406.js`))) {
     return await fetch(event.request)
   }
 
@@ -97,7 +97,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/centrumGitPages/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
