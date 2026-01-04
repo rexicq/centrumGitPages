@@ -1,0 +1,9 @@
+{
+  "title": "Блог",
+  "description": "Новости про Узи В Мелитополе. Скидки, акции УЗИ.",
+  "multiImage": "../images/blog/multi.png",
+  "header": {
+  "image": "../images/blog/blog.jpg",
+    "title": "Блог"
+  }
+}

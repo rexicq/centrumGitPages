@@ -1,0 +1,13 @@
+{
+  "title": "Контакты",
+  "description": "Найти УЗИ в Мелитополе по низким ценам. Мы находимся в центре города. Записаться на прием УЗИ быстро. Качественное УЗИ.",
+  "header": {
+  "image": "../images/contact/contact-us-hero.jpg",
+    "title": "УЗИ Связаться"
+},
+  "subheader": {
+    "image": "../images/contact/bg_2.jpg",
+    "title": "Контакт УЗИ"
+
+  }
+}

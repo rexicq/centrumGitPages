@@ -1,0 +1,51 @@
+{
+  "title": "О Нас",
+  "content": "content.md",
+  "description": "Узнать больше про УЗИ в Мелитополе. Современный кабинет УЗИ с новейшими технологиями. Кабинет УЗИ Мелитополь фотографии.",
+  "gallery": [
+    {
+    "image": "../images/gallery/gal-2.jpg",
+    "title": "Офис УЗИ Мелитополь"
+  },
+    {
+      "image": "../images/gallery/gal-3.jpg",
+      "title": "Кабинет УЗИ"
+    },
+    {
+      "image": "../images/gallery/gal-5.jpg",
+      "title": "Адресс УЗИ"
+    },
+    {
+      "image": "../images/gallery/gal-6.jpg",
+      "title": "Оборудование УЗИ"
+    },
+    {
+      "image": "../images/gallery/gal-7.jpg",
+      "title": "Врач УЗИ"
+    },
+    {
+      "image": "../images/gallery/gal-8.jpg",
+      "title": "Офис УЗИ Мелитополь"
+    },
+    {
+      "image": "../images/gallery/gal-9.jpg",
+      "title": "Интерьер УЗИ"
+    },
+    {
+      "image": "../images/gallery/gal-10.jpg",
+      "title": "Оборудование УЗИ"
+    },
+    {
+      "image": "../images/gallery/gal-11.jpg",
+      "title": "Оборудование УЗИ"
+    },
+    {
+      "image": "../images/gallery/gal-12.jpg",
+      "title": "Оборудование УЗИ"
+    }
+  ],
+  "header": {
+    "image": "../images/about/header_about.jpg",
+    "title": "ПРО НАС"
+  }
+}
