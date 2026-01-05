@@ -53,11 +53,16 @@ export default class TopMenu extends Component {
                       <b style={{ color: "#797979" }}>
                         <span style={{ color: "red" }}>&#8962;</span>
                       </b>{" "}
-                      ул.Интеркультурная 77/4, офиc 59, Мелитополь{" "}
+                      ул. Екатерины Великой 77/4, офиc 59, Мелитополь{" "}
                     </span>
                     <span>
                       <b style={{ color: "#797979" }}>&#128222;</b> +7 990
                       228-30-50
+                    </span>
+
+                    <span>
+                      <b style={{ color: "#797979" }}>&#128222;</b> +7 990
+                      155-76-07
                     </span>
                     <Icons height="2rem" />
                   </InfoWrapper>
@@ -84,12 +89,16 @@ export default class TopMenu extends Component {
                 <SmallInfo ref={referrer} isVisible={false}>
                   <InfoWrapper>
                     <span>
-                      <b style={{ color: "#797979" }}>&#8962;</b>{" "}
-                      ул.Интеркультурная 77/4, офиc 59
+                      <b style={{ color: "#797979" }}>&#8962;</b> ул.Екатерины
+                      Великой 77/4, офиc 59
                     </span>
                     <span>
                       <b style={{ color: "#797979" }}>&#128222;</b> +7 990
                       228-30-50
+                    </span>
+                    <span>
+                      <b style={{ color: "#797979" }}>&#128222;</b> +7 990
+                      155-76-07
                     </span>
                     {width > 450 && <Icons height="1.6rem" />}
                   </InfoWrapper>

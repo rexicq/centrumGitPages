@@ -93,7 +93,36 @@ export default createGlobalStyle`
     content: '';
     content: none;
   }
+.badge {
+  position: relative;
+  width: 40px;
+  height: 46px; /* полная высота с треугольником */
+  border-radius: 50%;
+  background-color: white;
+  border: 5px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: red;
+}
 
+.badge::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: red;
+}
+
+.badge span {
+  display:block;
+  transform: translateY(-2px);
+}
 
    .imgbg {
     display: grid;

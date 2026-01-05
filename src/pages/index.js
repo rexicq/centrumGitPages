@@ -10,6 +10,7 @@ import Team from "components/main/team/team";
 import Posts from "components/main/posts";
 import Services from "components/main/services/services";
 import MyMapComponent from "components/main/location/location.js";
+import YandexMap from "components/main/location/yandex.js";
 
 import Advertising from "components/advertising/advertising.js";
 import Contact from "components/main/contact/contact.js";
@@ -94,12 +95,11 @@ const Index = ({ data }) => {
       <Team info={data.homeJson.team} />
       <Features bg={data.homeJson.features} />
       <Contact />
-      <MyMapComponent
+      <YandexMap
         referrer={""}
         image={data.homeJson.location.image}
         title={data.homeJson.location.title}
         inView={true}
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCa6tEkCsJX1xvTf1voGsSe5czgzxAvpQ&v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `600px` }} />}
         mapElement={<div style={{ height: `100%` }} />}

@@ -68,17 +68,10 @@ export default class Contact extends Component {
                           </b>
                           <br />
                           <b>
-                            улица Интеркультурная, 77/4, офис 59, Мелитополь,
-                            Запорожская область, 72310
+                            улица Екатерины Великой, 77/4, офис 59, 2 этаж,вход
+                            1, Мелитополь, Запорожская область, 272310
                           </b>
                         </span>
-                        <br />
-                        <span
-                          style={{ display: "block", color: Colors.greyColor }}
-                        >
-                          ​ Почта:
-                        </span>
-                        <b>lokmedic2005@ukr.net</b>
                         <br />
                         <span
                           style={{ color: Colors.greyColor, display: "block" }}
@@ -86,6 +79,7 @@ export default class Contact extends Component {
                           Телефоны:
                         </span>{" "}
                         <b>+7 990 228-30-50</b>
+                        <b>+7 990 155-76-07</b>
                       </div>
                     </DefaultText>
                   </About>

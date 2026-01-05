@@ -61,10 +61,10 @@ export const Heading2 = styled.h2`
   letter-spacing: 5px;
   padding: ${({ padding }) => padding};
   text-transform: ${({ transform }) => transform};
-  margin: ${({ margin }) => margin}
-  font-size: 4rem;
+  margin: ${({ margin }) => margin};
+  font-size: ${({ fontsize }) => fontsize || "4"}rem;
   @media (max-width: ${TABLET}px) {
-    font-size: 3rem;
+    font-size: ${({ fontsizeM }) => fontsizeM || "3"}rem;
   }
   color: ${({ color }) => color};
   line-height: 1.4;

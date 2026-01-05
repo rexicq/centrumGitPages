@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-offline',
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-netlify-cache',
@@ -26,15 +27,13 @@ module.exports = {
         trackingId: 'UA-140687726-1',
       },
     },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Узи Centrum Мелитополь',
         short_name: 'УЗИ',
         lang: 'ru-RU',
-        start_url: '/',
-        display: 'standalone',
+        display: 'browser', // или standalone, но для теста browser проще
         icon: `src/images/icon.jpg`,
         theme_color: '#16405C',
         background_color: '#525252',

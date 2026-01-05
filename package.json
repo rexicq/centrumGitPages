@@ -6,8 +6,8 @@
     "node": "14.x",
     "npm": "6.x"
   },
-  "homepage": "https://rexicq.github.io/centrumGitPages/",
   "scripts": {
+    "predeploy": "echo www.uzicentrum.com > public/CNAME",
     "develop": "gatsby develop",
     "deploy": "gatsby build && gh-pages -d public",
     "serve": "gatsby serve",
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.10.30",
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@reach/dialog": "^0.2.9",
     "@reach/router": "^1.2.1",
     "@reach/visually-hidden": "^0.1.1",

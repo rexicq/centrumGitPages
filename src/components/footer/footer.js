@@ -31,15 +31,12 @@ export default () => {
           Более детальную информацию для записи на УЗИ Мелитополь узнавайте по
           телефону: <br />
           +7 990 228-30-50
+          <br />
+          +7 990 155-76-07
         </p>
         <br />
       </span>
       <ul>
-        <li>
-          <a href="http://ultrasound.net.ua/" alt="linktousi">
-            Украинский Портал УЗИ Диагностики
-          </a>
-        </li>
         <li>
           <a
             href="https://medportal.ru/enc/gastroenterology/gastritis/gastritis/"

@@ -99,6 +99,7 @@ const PhoneLink = styled.a`
   text-decoration: none;
   display: block;
   margin-top: 0.5rem;
+  text-align: center;
 
   &:hover {
     opacity: 0.8;
@@ -137,21 +138,36 @@ export default class Advertising extends Component {
         open={this.state.clicked}
         modal
         closeOnDocumentClick
-        contentStyle={{ padding: 0, border: "none", background: "transparent" }}
+        contentStyle={{
+          padding: 0,
+          border: "none",
+          background: "transparent",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minWidth: "70vw"
+        }}
       >
         <PopupCard>
           <div>
             <Heading1 color="black">Кабинет УЗИ "ЦЕНТРУМ"!</Heading1>
             <br />
-            <Heading3 color="black" padding="0px" lineheight="2">
+            <Heading2
+              fontsize="3"
+              fontsizeM="2.5"
+              color="black"
+              padding="0px"
+              lineheight="2"
+            >
               Кабинет УЗИ работает в период январских праздников во все дни,
               кроме 1 и 7 января, а также суббот и воскресений.
               <br />
               <br />
               Запись по телефону:
-            </Heading3>
+            </Heading2>
 
             <PhoneLink href="tel:+79902283050">+7 990 228-30-50</PhoneLink>
+            <PhoneLink href="tel:+79901557607">+7 990 155-76-07</PhoneLink>
 
             <ButtonWrapper>
               <Button
