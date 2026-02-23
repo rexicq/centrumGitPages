@@ -16,6 +16,8 @@ export const ScrollButtonDown = styled(ScrollButton)`
   }
   @media (max-width: ${PHONE}px) {
     margin-bottom: 5rem;
+    grid-area: 1 / -1 / 2 / 1;
+    padding-left: 3rem;
   }
 `;
 

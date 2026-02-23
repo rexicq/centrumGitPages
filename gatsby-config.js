@@ -9,12 +9,6 @@ module.exports = {
     'gatsby-plugin-offline',
     `gatsby-plugin-sitemap`,
     {
-      resolve: 'gatsby-plugin-netlify-cache',
-      options: {
-        cachePublic: true,
-      },
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: 'z6fpa0om40da',

@@ -57,7 +57,7 @@ export const Heading1 = styled.h1`
 export const Heading2 = styled.h2`
   text-align: center;
   font-family: ${Fonts.main};
-  font-weight: ${({ fontweight }) => fontweight || "300"};
+  font-weight: ${({ fontweight }) => fontweight || "700"};
   letter-spacing: 5px;
   padding: ${({ padding }) => padding};
   text-transform: ${({ transform }) => transform};

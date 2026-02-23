@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import posed from 'react-pose';
-import { Colors } from '../../constants/theme';
-import { toRgba } from '../../helpers/toRgba';
-import breakpoints from '../../constants/breakpoints';
-const { DESKTOP,  } = breakpoints;
+import styled from "styled-components";
+import posed from "react-pose";
+import { Colors } from "../../constants/theme";
+import { toRgba } from "../../helpers/toRgba";
+import breakpoints from "../../constants/breakpoints";
+const { DESKTOP } = breakpoints;
 
 export const Container = styled.div`
   grid-column: full-start / full-end;
@@ -15,7 +15,7 @@ export const Container = styled.div`
   background: rgba(255, 255, 255, 0.3);
   z-index: 10;
   @media (max-width: ${DESKTOP}px) {
-  grid-template-columns: 1fr minmax(100px, 90vw) 1fr;
+    grid-template-columns: 1fr minmax(100px, 90vw) 1fr;
   }
   //a {
   //  color: white;
@@ -29,24 +29,23 @@ export const AnimatedContainer = posed.div({
     y: 0,
     transition: {
       duration: 500,
-      ease: 'easeInOut',
-    },
+      ease: "easeInOut"
+    }
   },
   exit: {
-    y: '-10rem',
+    y: "-10rem",
     transition: {
-      ease: 'easeInOut',
-    },
-  },
+      ease: "easeInOut"
+    }
+  }
 });
 
 export const MobileContainer = styled.div`
-  grid-column: center-start / center-end;
+  grid-column: -1 / 1;
   grid-row: 1 / 2;
   display: flex;
   align-content: center;
   z-index: 10;
-
 `;
 
 export const NavWrapper = styled.div`
@@ -68,7 +67,7 @@ export const NavWrapper = styled.div`
     fontSize: 10rem;
     transform: translate(-50%, -50%);
     position: fixed;
-    display: ${({ isVisible }) => (isVisible ? '' : 'none')};
+    display: ${({ isVisible }) => (isVisible ? "" : "none")};
     li {
       a {  
           text-decoration: none;
@@ -84,21 +83,24 @@ export const SmallInfo = styled.div`
   grid-column: 1 / -1;
   display: flex;
   left: 0;
-  position: ${({ isVisible }) => !isVisible && 'fixed'};
-  width: ${({ isVisible }) => !isVisible && '100%'}; ;
+  position: ${({ isVisible }) => !isVisible && "fixed"};
+  width: ${({ isVisible }) => !isVisible && "100%"};
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid white;
   color: white;
-  background-color: ${({ isVisible }) => isVisible ? toRgba({
-  hex: Colors.primaryColorDarkest,
-  opacity: 0.25,
-}) : Colors.primaryColorDarkest};
+  background-color: ${({ isVisible }) =>
+    isVisible
+      ? toRgba({
+          hex: Colors.primaryColorDarkest,
+          opacity: 0.25
+        })
+      : Colors.primaryColorDarkest};
   font-size: 1.6rem;
   height: 4rem;
-      
+
   @media (max-width: ${DESKTOP}px) {
-  height: 3rem;
+    height: 3rem;
   }
 `;
 export const InfoWrapper = styled.div`
@@ -113,7 +115,6 @@ export const InfoWrapper = styled.div`
     padding-top: 1.3rem;
   }
 `;
-
 
 export const GridWrapper = styled.div`
   grid-column: 2 / 3;

@@ -154,20 +154,43 @@ export default class Advertising extends Component {
             <br />
             <Heading2
               fontsize="3"
+              fontweight="550"
               fontsizeM="2.5"
               color="black"
               padding="0px"
               lineheight="2"
             >
-              Кабинет УЗИ работает в период январских праздников во все дни,
-              кроме 1 и 7 января, а также суббот и воскресений.
+              Запись на УЗИ производится каждую пятницу с 17.00 до 19.00 на
+              неделю вперёд по телефонам:
               <br />
-              <br />
-              Запись по телефону:
+              <PhoneLink href="tel:+79902283050">+7 990 228-30-50</PhoneLink>
+              <PhoneLink href="tel:+79901557607">+7 990 155-76-07</PhoneLink>
             </Heading2>
+            <br />
+            <Heading2
+              fontsize="3"
+              fontweight="550"
+              fontsizeM="2.5"
+              color="black"
+              padding="0px"
+              lineheight="2"
+            >
+              Мы работаем с понедельника по субботу включительно!
+            </Heading2>
+            <br />
+            <br />
 
-            <PhoneLink href="tel:+79902283050">+7 990 228-30-50</PhoneLink>
-            <PhoneLink href="tel:+79901557607">+7 990 155-76-07</PhoneLink>
+            <Heading2
+              fontsize="2.5"
+              fontweight="500"
+              fontsizeM="2.5"
+              color="black"
+              padding="0px"
+              lineheight="2"
+            >
+              Обследование сосудов, органов малого таза у женщин и скрининг при
+              беременности не производится
+            </Heading2>
 
             <ButtonWrapper>
               <Button

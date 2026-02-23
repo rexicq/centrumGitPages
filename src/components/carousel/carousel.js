@@ -10,8 +10,9 @@ import breakpoints from "../../constants/breakpoints";
 
 const { DESKTOP, TABLET } = breakpoints;
 const Container = styled.div`
-position: relative;
+  position: relative;
   grid-column: full-start / full-end;
+  padding: 2rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,15 +30,19 @@ position: relative;
 const Wrapper = styled(AnimatedContainer)`
   display: flex;
   flex-direction: column;
-  
-margin: 0rem 5rem;
-  max-height: 30rem;
+
+  margin: 0rem 5rem;
+  max-height: 33rem;
+
+  @media (max-width: ${TABLET}px) {
+    max-height: 40rem;
+  }
 `;
 
 const CarouselWrapper = styled(Carousel)`
   grid-column: center-start / center-end;
-  
-position: relative;
+
+  position: relative;
   font-size: 2rem;
   color: white;
   line-height: 1.5;
@@ -80,8 +85,8 @@ export default class MyCarousel extends React.Component {
     // this.setState((state, props) => {
     //   return { slides: props.slides };
     // });
-    
-    setTimeout(() => this.setState({ mounted: true }), 100)
+
+    setTimeout(() => this.setState({ mounted: true }), 100);
   }
 
   onChange = value => {
@@ -92,33 +97,39 @@ export default class MyCarousel extends React.Component {
     const { value, viewed } = this.state;
     const { nav } = this.props;
     const ssr = typeof window === "undefined";
-    
+
     // this.setState({ slides: this.props.slides });
-    const {slides} = this.props;
-    console.log(slides, 'slides')
+    const { slides } = this.props;
+    console.log(slides, "slides");
     return (
       <InView threshold={0.8}>
         {({ inView, ref }) => (
           <Container ref={ref}>
-              <Wrapper
-              pose={nav ? "visible" : inView || ssr || !this.state.mounted ? "visible" : "invisible"}
-              >
-                <Head>{this.props.head}</Head>
-                <CarouselWrapper
-                  onChange={this.onChange}
-                  slidesPerScroll={1}
-                  value={value}
-                  slides={slides}
-                  autoPlay={8000}
-                  animationSpeed={1000}
-                  infinite
-                />
-                <Dots
-                  value={value}
-                  onChange={this.onChange}
-                  number={slides.length}
-                />
-              </Wrapper>
+            <Wrapper
+              pose={
+                nav
+                  ? "visible"
+                  : inView || ssr || !this.state.mounted
+                  ? "visible"
+                  : "invisible"
+              }
+            >
+              <Head>{this.props.head}</Head>
+              <CarouselWrapper
+                onChange={this.onChange}
+                slidesPerScroll={1}
+                value={value}
+                slides={slides}
+                autoPlay={8000}
+                animationSpeed={1000}
+                infinite
+              />
+              <Dots
+                value={value}
+                onChange={this.onChange}
+                number={slides.length}
+              />
+            </Wrapper>
           </Container>
         )}
       </InView>

@@ -15,10 +15,10 @@ export const Heading = styled(Heading2)`
 `;
 
 export const SVGS = styled(AnimatedContainer)`
-  padding: 1rem 2rem;
+  padding: 6rem 2rem;
   grid-column: 2 / span 8;
   display: grid;
-  min-height: 50rem;
+  min-height: 30rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: center;
   justify-items: center;

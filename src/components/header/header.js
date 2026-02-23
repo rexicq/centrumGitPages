@@ -58,6 +58,7 @@ export default class header extends Component {
           opacity: "0.65"
         })}`}
       >
+        <div className="headers"></div>
         <AnimatedContainer
           pose={nav ? "initial" : this.state.loading}
           ref={refLink}

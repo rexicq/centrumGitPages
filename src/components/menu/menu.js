@@ -108,7 +108,7 @@ export default class TopMenu extends Component {
                 {({ inView, ref }) => (
                   <LogoAnimation
                     referrer={ref}
-                    padding={"4rem 1rem 5rem 0"}
+                    padding={"4rem 2rem 5rem 3rem"}
                     isVisible={ssr || inView}
                   />
                 )}

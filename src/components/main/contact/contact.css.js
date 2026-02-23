@@ -35,20 +35,23 @@ export const About = styled.div`
 `;
 
 export const Container = styled.div`
-  padding: 5rem 0;
+  padding: 6rem 1rem;
   position: relative;
   min-height: 50rem;
-  grid-column: center-start / center-end;
   display: grid;
   grid-gap: 3rem;
   grid-template-columns: repeat(2, minmax(min-content, 56rem));
+  grid-column: center-start / center-end;
   @media (max-width: ${TABLET}px) {
     display: flex;
     flex-direction: column;
     padding: 3rem 1rem;
   }
   @media (max-width: ${PHONE}px) {
-    padding: 1rem 1rem;
+    margin: 0 2rem;
+    padding: 6rem 1rem;
+    display: flex;
+    grid-column: 1 / -1;
   }
 `;
 

@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import { Colors } from '../../../constants/theme';
-import { Heading3, Heading2, Section } from '../../utils/style';
-import breakpoints from '../../../constants/breakpoints';
+import styled from "styled-components";
+import Img from "gatsby-image";
+import { Colors } from "../../../constants/theme";
+import { Heading3, Heading2, Section } from "../../utils/style";
+import breakpoints from "../../../constants/breakpoints";
 
-const margin = '3rem';
+const margin = "3rem";
 const { DESKTOP, PHONE, TABLET } = breakpoints;
 
 export const Container = styled.section`
@@ -21,14 +21,14 @@ export const Container = styled.section`
     grid-template-columns: auto;
   }
   @media (max-width: ${TABLET}px) {
-    padding: 2rem 1rem;
-      grid-row-gap: 2rem;
+    padding: 6rem 1rem;
+    grid-row-gap: 2rem;
   }
-  
+
   @media (max-width: ${PHONE}px) {
-    grid-column: full-start /  full-end;
-    padding: 1rem 1rem;
-      grid-row-gap: 2rem;
+    grid-column: full-start / full-end;
+    padding: 6rem 1rem;
+    grid-row-gap: 2rem;
   }
   span {
     grid-column: 1 / -1;
@@ -50,23 +50,26 @@ export const AvatarOne = styled(Img)`
   height: 50rem;
   width: 50rem;
   border-radius: 3px;
-    @media (max-width: ${PHONE}px) {
-        height: 35rem;
-        width: 35rem;
-        margin: auto;
+  @media (max-width: ${PHONE}px) {
+    height: 35rem;
+    width: 35rem;
+    margin: auto;
   }
 `;
 export const AvatarTwo = styled(Img)`
   opacity: 1;
-  margin-top: ${margin};
+  margin-top: ${margin || 0};
   justify-self: end;
   grid-column: 2 / 3;
   height: 50rem;
-  width: 50rem; 
+  width: 50rem;
   @media (max-width: ${PHONE}px) {
-        height: 35rem;
-        width: 35rem;
-        margin: auto;
+    height: 35rem;
+    width: 35rem;
+    margin: auto;
+  }
+  @media (max-width: ${TABLET}px) {
+    margin-top: 0rem;
   }
 `;
 
@@ -83,10 +86,10 @@ export const TextBlock = styled.div`
       margin-bottom: 0;
     }
   }
-    @media (max-width: ${PHONE}px) {
-        height: 100%;
-        width: 100%;
-        padding: 0rem 1rem;
+  @media (max-width: ${PHONE}px) {
+    height: 100%;
+    width: 100%;
+    padding: 0rem 1rem;
   }
 
   h3 {
@@ -114,11 +117,17 @@ export const TextBlock = styled.div`
     @media (max-width: ${DESKTOP}px) {
       margin: ${margin} 0;
     }
+    @media (max-width: ${TABLET}px) {
+      margin: 0rem;
+    }
+  }
+  @media (max-width: ${TABLET}px) {
+    margin: 1rem 0rem;
   }
 `;
 
 export const TextBlockSecond = styled(TextBlock)`
-  margin: ${margin} 0;
+  margin: ${margin}rem 0rem;
   align-items: flex-end;
   p {
     text-align: end;
@@ -126,5 +135,13 @@ export const TextBlockSecond = styled(TextBlock)`
       margin: ${margin} 0;
       text-align: initial;
     }
+
+    @media (max-width: ${TABLET}px) {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: ${TABLET}px) {
+    margin: 1 0;
   }
 `;

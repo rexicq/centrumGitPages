@@ -1,19 +1,20 @@
-import styled from 'styled-components';
-import { BackgroundSection, Button, AnimatedContainer } from '../../utils';
+import styled from "styled-components";
+import { BackgroundSection, Button, AnimatedContainer } from "../../utils";
 
-import { Heading2 } from '../../utils/style';
-import posed from 'react-pose';
-import breakpoints from '../../../constants/breakpoints';
+import { Heading2 } from "../../utils/style";
+import posed from "react-pose";
+import breakpoints from "../../../constants/breakpoints";
 
 const { TABLET } = breakpoints;
 
 export const StyledSpan = styled.span`
-text-decoration: none;
-`
+  text-decoration: none;
+`;
 
 export const Wrapper = styled(AnimatedContainer)`
   @media (max-width: 810px) {
     margin: 0 auto;
+    padding: 6rem 0;
   }
   min-height: 50rem;
   position: relative;
@@ -36,13 +37,17 @@ export const ButtonWrapper = styled.div`
   width: 30rem;
   margin-right: 2rem;
   @media (max-width: ${TABLET}px) {
-  margin-right: 0rem;
+    margin-right: 0rem;
+
+    width: 40rem;
+    height: 6rem;
   }
+
   justify-content: flex-end;
   align-items: center;
   button {
     font-size: 2rem;
     width: 100%;
     height: 5rem;
-  };
+  }
 `;

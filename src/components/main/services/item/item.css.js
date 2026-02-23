@@ -1,31 +1,39 @@
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import { Colors } from '../../../../constants/theme';
-import breakpoints from '../../../../constants/breakpoints';
-import React from 'react'
+import styled from "styled-components";
+import Img from "gatsby-image";
+import { Colors } from "../../../../constants/theme";
+import breakpoints from "../../../../constants/breakpoints";
+import React from "react";
 
 const { TABLET } = breakpoints;
 
 export const Back = styled.div`
   height: 20rem;
-  width: 30rem; 
+  width: 30rem;
   background-сolor: white;
   p {
     padding: 1rem;
     line-height: 1.4;
     font-size: 1.5rem;
-  }
-`
 
-export const Video = ({ videoSrcURL, videoTitle, ...props }) => (
-  <div style={{width: "30rem", height: "20rem"}}>
-    <video style={{objectFit: "fill",
-      backfaceVisibility: "hidden"}}
+    @media (max-width: ${TABLET}px) {
+      font-size: 2.3rem;
+    }
+  }
+  @media (max-width: ${TABLET}px) {
+    height: 30rem;
+    width: 45rem;
+  }
+`;
+
+export const Video = ({ videoSrcURL, videoTitle, className }) => (
+  <div className={className}>
+    <video
+      style={{ objectFit: "fill", backfaceVisibility: "hidden" }}
       src={videoSrcURL}
       title={videoTitle}
-           playsinline
+      playsinline
       loop
-       muted
+      muted
       autoPlay
       controls
       autohide
@@ -33,14 +41,20 @@ export const Video = ({ videoSrcURL, videoTitle, ...props }) => (
       height="100%"
     />
   </div>
-)
+);
 
 export const GIF = styled(Video)`
   backface-visibility: hidden;
-  width: 100%    !important;
-  height: 100%   !important;
   border-radius: 3px;
-`
+  height: 20rem;
+  width: 30rem;
+
+  @media (max-width: ${TABLET}px) {
+    height: 30rem;
+    width: 45rem;
+    padding-top: 5rem;
+  }
+`;
 
 export const Container = styled.div`
   width: 30rem;
@@ -59,9 +73,14 @@ export const Container = styled.div`
     transform: translateY(-1rem) scale(1.03);
     box-shadow: 0 1rem 1rem 1rem rgba(1, 1, 1, 0.15);
   }
-      
+
   @media (max-width: ${TABLET}px) {
     margin: 2rem 0rem;
+  }
+
+  @media (max-width: ${TABLET}px) {
+    height: 30rem;
+    width: 45rem;
   }
 `;
 
@@ -69,6 +88,10 @@ export const Avatar = styled(Img)`
   height: 20rem;
   width: 30rem;
   border-radius: 3px;
+  @media (max-width: ${TABLET}px) {
+    height: 30rem;
+    width: 45rem;
+  }
 `;
 export const TitleWrapper = styled.div`
   padding: 1rem 2rem;
@@ -77,7 +100,10 @@ export const TitleWrapper = styled.div`
   position: absolute;
   transform: translateY(50%);
   z-index: 100;
-  font-size: 2.5rem;
+
+  @media (max-width: ${TABLET}px) {
+    font-size: 3.5rem;
+  }
   color: white;
 `;
 

@@ -1,7 +1,9 @@
-import styled, { keyframes } from 'styled-components';
-import { Colors } from '../../constants/theme';
-import { Link } from 'gatsby';
+import styled, { keyframes } from "styled-components";
+import { Colors } from "../../constants/theme";
+import { Link } from "gatsby";
 
+import breakpoints from "../../constants/breakpoints";
+const { DESKTOP, PHONE } = breakpoints;
 const moveDown = keyframes`
   0% {
     opacity: 0;
@@ -28,11 +30,15 @@ export const ScrollButton = styled(Link)`
   height: 2.5rem;
   border-left: solid 1px;
   border-bottom: solid 1px;
-  border-width: ${({borderwidth}) => borderwidth || 1}px;
+  border-width: ${({ borderwidth }) => borderwidth || 1}px;
   animation-name: ${moveDown};
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  @media (max-width: ${PHONE}px) {
+    grid-area: 3 / 2 / 3 / 2 !important;
+    padding-left: 0.6rem !important;
+  }
 `;
 
 export const ScrollTop = styled(Link)`
@@ -69,5 +75,5 @@ export const ScrollTop = styled(Link)`
 
 ScrollButton.defaultProps = {
   borderwidth: 4,
-  color: Colors.primaryColorDarkest,
+  color: Colors.primaryColorDarkest
 };

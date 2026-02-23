@@ -18,36 +18,51 @@ export default class features extends Component {
   };
 
   componentDidMount() {
-    console.log('mounted')
-    setTimeout(() => this.setState({ mounted: true }), 100)
+    console.log("mounted");
+    setTimeout(() => this.setState({ mounted: true }), 100);
   }
   render() {
     const {
       nav,
       bg: { image, items }
     } = this.props;
-  const ssr = typeof window === "undefined"
+    const ssr = typeof window === "undefined";
     return (
       <InView threshold={0.3}>
         {({ inView, ref }) => (
           <BackgroundSection
-          zIndex={"0"}
+            zIndex={"0"}
             styleName={"imgbg featuresbg"}
             img={image}
             overlayColor={"rgba(255, 255, 255, 0.1)"}
             onClick={() => this.setState({ clicked: false })}
+            paddingTop={"6rem"}
           >
-            <div 
-            ref={ref} style={{position: 'absolute', height: '100%', width: '100%'}}></div>
+            <div
+              ref={ref}
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                paddingTop: "6rem"
+              }}
+            ></div>
+
+            <Heading fontsizeM={4}>ПОЧЕМУ МЫ?</Heading>
             <SVGS
-              pose={nav ? "visible" : ( ssr || inView || !this.state.mounted ) ? "visible" : "invisible"}
+              pose={
+                nav
+                  ? "visible"
+                  : ssr || inView || !this.state.mounted
+                  ? "visible"
+                  : "invisible"
+              }
               id={"features"}
             >
               {!this.state.viewed && inView && this.setState({ viewed: true })}
               {console.log(inView, this.state.mounted)}
               {this.state.viewed && (
                 <>
-                  <Heading>ПОЧЕМУ МЫ?</Heading>
                   {items.map(({ name, title, text }, i) => {
                     return (
                       <Item

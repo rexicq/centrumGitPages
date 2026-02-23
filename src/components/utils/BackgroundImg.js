@@ -23,7 +23,8 @@ export const BackgroundSection = ({
   filter,
   id,
   isDarken,
-  width
+  width,
+  paddingTop
 }) => {
   const bgRef = useRef(ref);
   console.log(bgRef);
@@ -40,7 +41,8 @@ export const BackgroundSection = ({
         backgroundRepeat: "no-repeat",
         zIndex,
         height,
-        width
+        width,
+        paddingTop
       }}
       id={id}
       backgroundColor={overlayColor}

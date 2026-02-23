@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { Colors, primaryColor } from '../../constants/theme';
-import Typist from 'react-typist';
-import breakpoints from '../../constants/breakpoints';
+import styled from "styled-components";
+import { Colors, primaryColor } from "../../constants/theme";
+import Typist from "react-typist";
+import breakpoints from "../../constants/breakpoints";
 
 const { TABLET, DESKTOP, PHONE } = breakpoints;
 
@@ -12,9 +12,11 @@ export const Container = styled.div`
   color: white;
   font-size: 3rem;
   @media (max-width: ${TABLET}px) {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
   }
-  
+  @media (max-width: ${PHONE}px) {
+    font-size: 2.2rem;
+  }
 `;
 export const Check = styled(Typist)`
   padding-left: 1rem;
@@ -23,7 +25,6 @@ export const Check = styled(Typist)`
   font-weight: 500;
   border-bottom: 6px solid ${Colors.primaryColor};
 `;
-
 
 // export const Wrapper = styled.div`
 //   font-size: 3rem;

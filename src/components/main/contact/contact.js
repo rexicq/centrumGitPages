@@ -26,6 +26,7 @@ export default class Contact extends Component {
             {viewed && (
               <>
                 <Heading2
+                  fontsizeM={4}
                   margin={"auto"}
                   color={Colors.primaryColorDarkest}
                   style={{ gridColumn: "1 / -1" }}

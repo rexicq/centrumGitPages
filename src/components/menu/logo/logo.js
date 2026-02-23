@@ -1,47 +1,46 @@
-import posed, {PoseGroup} from 'react-pose';
-import React from 'react';
-import { Container, AbsoluteCase, SVG } from './logo.css';
-import { Colors } from '../../../constants/theme';
+import posed, { PoseGroup } from "react-pose";
+import React from "react";
+import { Container, AbsoluteCase, SVG } from "./logo.css";
+import { Colors } from "../../../constants/theme";
 
 const staggerDuration = 1000;
 const PathTextGroupMain = posed.g({
-  empty: {
-  },
+  empty: {},
   go: {
     delayChildren: 200,
-    staggerChildren: 200,
-  },
+    staggerChildren: 200
+  }
 });
 
 const PathTextGroupSecondary = posed.g({
   go: {
     delayChildren: 200,
-    staggerChildren: 150,
-  },
+    staggerChildren: 150
+  }
 });
 
 const PathTextMain = posed.path({
   empty: {
     opacity: 0,
-    fill: '#003498db',
+    fill: "#003498db",
     pathLength: 0,
-    y: -10,
+    y: -10
   },
   go: {
     opacity: 1,
     fill: Colors.colorGreyLight1,
     y: 0,
     pathLength: 1,
-    transition: ({ i }) => ({ delay: i * 100, duration: 400, ease: 'linear' })
-  },
+    transition: ({ i }) => ({ delay: i * 100, duration: 400, ease: "linear" })
+  }
 });
 
 const PathTextSecondary = posed.path({
   empty: {
     opacity: 0,
-    fill: '#003498db',
+    fill: "#003498db",
     pathLength: 0,
-    y: -10,
+    y: -10
   },
   go: {
     y: 0,
@@ -49,62 +48,59 @@ const PathTextSecondary = posed.path({
     pathLength: 1,
     fill: Colors.colorGreyLight1,
 
-    transition: ({ i }) => ({ delay: i * 80, duration: 400, ease: 'linear' })
-  },
+    transition: ({ i }) => ({ delay: i * 80, duration: 400, ease: "linear" })
+  }
 });
 
 const PathDiagnostic = posed.path({
   empty: {
-    pathLength: 0,
+    pathLength: 0
   },
   go: {
     pathLength: 1,
-    strokeWidth: '4px',
+    strokeWidth: "4px",
     transition: {
       delay: 1500,
       duration: 1000,
-      easing: 'ease-in',
-    },
-  },
+      easing: "ease-in"
+    }
+  }
 });
 
 class LogoAnimation extends React.Component {
   state = {
     active: false,
-    isVisible: false,
+    isVisible: false
   };
 
   componentWillReceiveProps(nextProps, nextContext) {
     if (nextProps.isVisible) {
       this.setState({
-        active: true,
+        active: true
       });
     } else {
       this.setState({
-        active: false,
+        active: false
       });
     }
   }
 
   render() {
     const { active } = this.state;
-    const  { referrer } = this.props;
+    const { referrer } = this.props;
+    console.log(this.props.padding, "padding");
     return (
-      <Container
-        ref={referrer}
-        padding={this.props.padding}>
-        <AbsoluteCase height={'4rem'} width={'13.4rem'}>
+      <Container ref={referrer} padding={this.props.padding}>
+        <AbsoluteCase height={"4rem"} width={"13.4rem"}>
           <SVG
-            viewBox={'155 -25 100 140'}
-            version={'1.1'}
-            xmlns={'http://www.w3.org/2000/svg'}
-
+            viewBox={"155 -25 100 140"}
+            version={"1.1"}
+            xmlns={"http://www.w3.org/2000/svg"}
             width="100%"
             height="100%"
-            zIndex={'100'}
+            zIndex={"100"}
           >
-            <PoseGroup
-              pose={this.state.active ? 'go' : 'empty'}>
+            <PoseGroup pose={this.state.active ? "go" : "empty"}>
               <PathTextMain
                 i={1}
                 d="M 0.004 54 L 0.004 14.2 A 15.757 15.757 0 0 1 1.182 7.863 Q 4.609 0 18.004 0 Q 23.804 0 29.604 1.6 L 29.604 8.2 Q 23.704 6.5 17.804 6.5 Q 12.967 6.5 10.482 7.878 A 5.923 5.923 0 0 0 9.504 8.55 Q 7.104 10.6 7.104 14.6 L 7.104 53.7 A 9.895 9.895 0 0 0 7.38 56.112 A 6.565 6.565 0 0 0 9.554 59.65 Q 11.668 61.419 16.537 61.662 A 32.537 32.537 0 0 0 18.154 61.7 A 42.333 42.333 0 0 0 27.719 60.644 A 38.584 38.584 0 0 0 29.804 60.1 L 29.804 66.6 A 31.597 31.597 0 0 1 24.721 67.749 Q 22.198 68.115 19.341 68.184 A 55.555 55.555 0 0 1 18.004 68.2 A 33.48 33.48 0 0 1 11.434 67.614 Q 1.153 65.547 0.119 56.183 A 19.91 19.91 0 0 1 0.004 54 Z"
@@ -143,7 +139,7 @@ class LogoAnimation extends React.Component {
             </PoseGroup>
           </SVG>
         </AbsoluteCase>
-        <AbsoluteCase width={'12.5rem'} height={'9rem'}>
+        <AbsoluteCase width={"12.5rem"} height={"9rem"}>
           <SVG
             version="1.1"
             id="Capa_2"
@@ -156,22 +152,21 @@ class LogoAnimation extends React.Component {
           >
             <g transform="scale(1.1, 1.1)" fill="transparent">
               <PathDiagnostic
-                pose={this.state.active ? 'go' : 'empty'}
+                pose={this.state.active ? "go" : "empty"}
                 d="M 431.75067138671875 82.81319427490234 C 417.1039733886719 96.8456039428711 414.6074523925781 78.84711456298828 400.5963439941406 85.8526611328125 C 388.4385986328125 91.93154907226562 405.1554260253906 167.15789794921875 387.6786193847656 168.6776123046875 C 363.3630065917969 176.27618408203125 388.5975341796875 4.520626064389944 364.1229248046875 -0.011722568422555923 C 343.60662841796875 -3.811038974672556 356.5242919921875 104.08934783935547 353.48486328125 153.48037719726562 C 351.8871765136719 169.45712280273438 355.004638671875 201.3516845703125 344.3665771484375 205.91082763671875 C 332.6502990722656 204.845703125 334.4884033203125 173.23675537109375 333.7284851074219 151.96063232421875 C 332.1308288574219 111.59686279296875 334.48834228515625 97.2506103515625 318.53125 88.89208984375 C 307.68096923828125 83.2086181640625 187.17343139648438 88.89210510253906 107.28968811035156 88.89210510253906 C 88.29312133789062 88.89210510253906 80.9753646850586 88.9740982055664 80.10201263427734 77.39600372314453"
               />
             </g>
           </SVG>
         </AbsoluteCase>
-        <AbsoluteCase width={'11rem'} height={'3rem'}  marginTop={'2.5rem'}>
+        <AbsoluteCase width={"11rem"} height={"3rem"} marginTop={"2.5rem"}>
           <SVG
-            viewBox={'170 -44 100 130'}
+            viewBox={"170 -44 100 130"}
             width="100%"
             height="100%"
-            version={'1.1'}
-            xmlns={'http://www.w3.org/2000/svg'}
+            version={"1.1"}
+            xmlns={"http://www.w3.org/2000/svg"}
           >
-            <PoseGroup
-              pose={this.state.active ? 'go' : 'empty'}>
+            <PoseGroup pose={this.state.active ? "go" : "empty"}>
               <PathTextSecondary
                 i={1}
                 d="M 0 68.201 L 0 1.001 L 17.6 1.001 Q 25.6 1.001 29.7 5.101 A 13.699 13.699 0 0 1 33.476 12.441 A 19.73 19.73 0 0 1 33.8 16.101 L 33.8 52.901 A 20.338 20.338 0 0 1 33.295 57.569 A 13.614 13.614 0 0 1 29.8 64.101 A 12.571 12.571 0 0 1 24.612 67.239 Q 22.598 67.898 20.144 68.105 A 27.858 27.858 0 0 1 17.8 68.201 L 0 68.201 Z M 26.7 52.701 L 26.7 16.201 A 12.248 12.248 0 0 0 26.212 12.584 Q 24.548 7.201 17.2 7.201 L 7.1 7.201 L 7.1 61.901 L 17.2 61.901 Q 26.7 61.901 26.7 52.701 Z"

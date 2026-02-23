@@ -28,7 +28,7 @@ class YandexMap extends Component {
   render() {
     const { center, zoom, nav, image, title } = this.props;
     console.log(nav);
-    const badgeSvg = (color = "red") => `
+    const badgeSvg = (color = "rgb(40, 3, 252)") => `
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="46">
   <!-- Круг -->
   <circle cx="20" cy="20" r="18" fill="white" stroke="${color}" stroke-width="5"/>
@@ -65,10 +65,13 @@ class YandexMap extends Component {
                   >
                     <Placemark
                       geometry={[46.847051, 35.370304]}
+                      properties={{
+                        balloonContentBody: "Кабинет Узи 'Центрум'"
+                      }}
                       options={{
                         iconLayout: "default#image",
                         iconImageHref: `data:image/svg+xml;utf8,${encodeURIComponent(
-                          badgeSvg("red")
+                          badgeSvg("rgb(40, 3, 252)")
                         )}`,
                         iconImageSize: [40, 46],
                         iconImageOffset: [-20, -46]
